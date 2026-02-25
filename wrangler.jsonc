@@ -1,0 +1,66 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "git-mcp",
+  "main": "src/index.ts",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-04-26",
+  "migrations": [
+    {
+      "new_sqlite_classes": ["MyMCP"],
+      "tag": "v1",
+    },
+    {
+      "new_classes": ["ViewCounterDO"],
+      "tag": "v2",
+    },
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "MyMCP",
+        "name": "MCP_OBJECT",
+      },
+      {
+        "class_name": "ViewCounterDO",
+        "name": "VIEW_COUNTER",
+      },
+    ],
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "ai-search-clob-rag",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE_KV",
+      "id": "15a251c50db4492e9cfda381d2b7d8f0",
+    },
+  ],
+  "ai": {
+    "binding": "AI",
+  },
+  "r2_buckets": [
+    {
+      "binding": "DOCS_BUCKET",
+      "bucket_name": "clob-r2",
+    },
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "MY_QUEUE",
+        "queue": "my-queue",
+      },
+    ],
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "assets": { "directory": "./static/", "binding": "ASSETS" },
+}
