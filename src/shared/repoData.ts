@@ -14,6 +14,8 @@ export type RequestData = {
 };
 export type LogData = RepoData & RequestData;
 
+export const WORKER_HOST = "git-mcp.yijia-su.workers.dev";
+
 export function getRepoData(requestData: RequestData): RepoData {
   const { requestHost, requestUrl } = requestData;
 
@@ -67,6 +69,7 @@ export function getRepoData(requestData: RequestData): RepoData {
     requestHost === "gitmcp.io" ||
     requestHost === HOST_TEMP_URL ||
     requestHost === "git-mcp.idosalomon.workers.dev" ||
+    requestHost === WORKER_HOST ||
     requestHost.includes("localhost")
   ) {
     // Extract owner/repo from path
@@ -128,6 +131,7 @@ export function getRepoDataFromUrl(url: string): MinimalRepoData {
     .replace(/^github\.com/, "gitmcp.io")
     .replace(HOST_TEMP_URL, "gitmcp.io")
     .replace("git-mcp.idosalomon.workers.dev", "gitmcp.io")
+    .replace(WORKER_HOST, "gitmcp.io")
     .replace(/^localhost:?[0-9]+/, "gitmcp.io");
 
   // Different URL patterns

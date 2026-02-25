@@ -114,7 +114,7 @@ export async function action({
   for (const originalUrl of mcpServers.map((mcpServer) => mcpServer.url)) {
     const url = originalUrl.replace(
       "https://gitmcp.io",
-      "https://git-mcp.idosalomon.workers.dev",
+      "https://git-mcp.yijia-su.workers.dev",
     );
     try {
       const { id } = await mcp.connect(url);

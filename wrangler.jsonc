@@ -10,12 +10,8 @@
   "compatibility_date": "2025-04-26",
   "migrations": [
     {
-      "new_sqlite_classes": ["MyMCP"],
+      "new_sqlite_classes": ["MyMCP", "ViewCounterDO"],
       "tag": "v1",
-    },
-    {
-      "new_classes": ["ViewCounterDO"],
-      "tag": "v2",
     },
   ],
   "durable_objects": {
