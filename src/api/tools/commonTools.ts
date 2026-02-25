@@ -366,7 +366,7 @@ export async function searchRepositoryDocumentation({
         query,
         env,
         ctx,
-        autoragPipeline: "docs-rag",
+        autoragPipeline: "clob-rag",
       });
       if (
         autoragResult?.content[0]?.text?.startsWith("No results found") ===
@@ -395,7 +395,7 @@ export async function searchRepositoryDocumentationAutoRag({
   query,
   env,
   ctx,
-  autoragPipeline = "docs-rag",
+  autoragPipeline = "clob-rag",
 }: {
   repoData: RepoData;
   query: string;
