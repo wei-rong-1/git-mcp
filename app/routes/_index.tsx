@@ -40,7 +40,7 @@ export default function Home() {
           const owner = parts[0];
           const repo = parts[1];
           if (owner && repo) {
-            targetUrl = `https://git-mcp.yijia-su.workers.dev/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
+            targetUrl = `https://git-mcp.cronoslabs.dev/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
           }
         }
       }
@@ -50,7 +50,7 @@ export default function Home() {
         if (owner && pathname) {
           const repo = pathname.split("/")[0];
           if (repo) {
-            targetUrl = `https://git-mcp.yijia-su.workers.dev/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
+            targetUrl = `https://git-mcp.cronoslabs.dev/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
           }
         }
       }
@@ -162,20 +162,20 @@ export default function Home() {
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-3 sm:p-4 mb-3">
                 <Example
                   from="github.com/username/repo"
-                  to="git-mcp.yijia-su.workers.dev/username/repo"
-                  bold="git-mcp.yijia-su.workers.dev"
+                  to="git-mcp.cronoslabs.dev/username/repo"
+                  bold="git-mcp.cronoslabs.dev"
                 />
                 <Divider simple />
                 <Example
                   from="username.github.io/repo"
-                  to="git-mcp.yijia-su.workers.dev/username/repo"
-                  bold="git-mcp.yijia-su.workers.dev"
+                  to="git-mcp.cronoslabs.dev/username/repo"
+                  bold="git-mcp.cronoslabs.dev"
                 />
                 <Divider simple />
                 <Example
                   from="any GitHub repository"
-                  to="git-mcp.yijia-su.workers.dev/docs"
-                  bold={["git-mcp.yijia-su.workers.dev", "any"]}
+                  to="git-mcp.cronoslabs.dev/docs"
+                  bold={["git-mcp.cronoslabs.dev", "any"]}
                 />
               </div>
 
@@ -242,7 +242,7 @@ export default function Home() {
                 <span className="text-gray-200 font-medium">github.com</span> or{" "}
                 <span className="text-gray-200 font-medium">github.io</span> to{" "}
                 <span className="text-emerald-400 font-medium">
-                  git-mcp.yijia-su.workers.dev
+                  git-mcp.cronoslabs.dev
                 </span>{" "}
                 and get instant AI context for any GitHub repository.
               </p>
@@ -264,7 +264,7 @@ export default function Home() {
                 </code>{" "}
                 with{" "}
                 <code className="bg-gray-700 px-1.5 py-0.5 rounded text-emerald-400">
-                  git-mcp.yijia-su.workers.dev
+                  git-mcp.cronoslabs.dev
                 </code>{" "}
                 in any repository URL.
               </p>

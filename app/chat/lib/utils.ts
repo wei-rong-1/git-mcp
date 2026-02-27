@@ -25,8 +25,8 @@ export function getRepoData(url: string): {
     /^(?:www\.)?([^\/]+)\.github\.io\/([^\/]+)/,
     // gitmcp.io/owner/repo
     /^(?:www\.)?gitmcp\.io\/([^\/]+)\/([^\/]+)/,
-    // git-mcp.yijia-su.workers.dev/owner/repo
-    /^(?:www\.)?git-mcp\.yijia-su\.workers\.dev\/([^\/]+)\/([^\/]+)/,
+    // git-mcp.cronoslabs.dev/owner/repo
+    /^(?:www\.)?git-mcp\.cronoslabs\.dev\/([^\/]+)\/([^\/]+)/,
     // owner.gitmcp.io/repo
     /^(?:www\.)?([^\/]+)\.gitmcp\.io\/([^\/]+)/,
     // owner.gitmcp.io
@@ -35,8 +35,8 @@ export function getRepoData(url: string): {
     /^(?:www\.)?([^\/]+)\.github\.io/,
     // gitmcp.io/docs
     /^(?:www\.)?gitmcp\.io\/(docs)/,
-    // git-mcp.yijia-su.workers.dev/docs
-    /^(?:www\.)?git-mcp\.yijia-su\.workers\.dev\/(docs)/,
+    // git-mcp.cronoslabs.dev/docs
+    /^(?:www\.)?git-mcp\.cronoslabs\.dev\/(docs)/,
     // Simple owner/repo format
     /^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)/,
   ];

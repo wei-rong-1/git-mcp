@@ -18,6 +18,7 @@ declare global {
     OPENAI_API_KEY?: string;
     ANTHROPIC_API_KEY?: string;
     XAI_API_KEY?: string;
+    MCP_AUTH_TOKEN?: string;
   }
 }
 
@@ -45,6 +46,33 @@ const handleCorsPreflightRequest = (): Response => {
       "Access-Control-Allow-Headers": "*",
       "Access-Control-Allow-Credentials": "true",
       "Access-Control-Max-Age": "86400", // 24 hours
+    },
+  });
+};
+
+const isAuthorizedMcpRequest = (
+  request: Request,
+  env: CloudflareEnvironment,
+): boolean => {
+  if (!env.MCP_AUTH_TOKEN) {
+    return true;
+  }
+
+  const authHeader = request.headers.get("Authorization") || "";
+  const expected = env.MCP_AUTH_TOKEN.trim();
+
+  if (!expected) {
+    return true;
+  }
+
+  return authHeader === expected || authHeader === `Bearer ${expected}`;
+};
+
+const unauthorizedResponse = (): Response => {
+  return new Response("Unauthorized", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": "Bearer",
     },
   });
 };
@@ -149,10 +177,16 @@ export default {
     ctx.props.requestUrl = request.url;
 
     if (isMessage) {
+      if (!isAuthorizedMcpRequest(request, env as CloudflareEnvironment)) {
+        return unauthorizedResponse();
+      }
       return await MyMCP.serveSSE("/*").fetch(request, env, ctx);
     }
 
     if (isStreamMethod) {
+      if (!isAuthorizedMcpRequest(request, env as CloudflareEnvironment)) {
+        return unauthorizedResponse();
+      }
       const isSse = request.method === "GET";
       if (isSse) {
         return await MyMCP.serveSSE("/*").fetch(request, env, ctx);

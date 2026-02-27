@@ -76,7 +76,7 @@ export const MCPServerManager = ({
       return null;
     }
 
-    const newUrl = ["https://git-mcp.yijia-su.workers.dev", owner, repo]
+    const newUrl = ["https://git-mcp.cronoslabs.dev", owner, repo]
       .filter(Boolean)
       .join("/");
 
@@ -283,12 +283,12 @@ export const MCPServerManager = ({
                   onChange={(e) =>
                     setNewServer({ ...newServer, url: e.target.value })
                   }
-                  placeholder="https://git-mcp.yijia-su.workers.dev/microsoft/playwright-mcp"
+                  placeholder="https://git-mcp.cronoslabs.dev/microsoft/playwright-mcp"
                   className="relative z-0 placeholder:text-muted-foreground/60"
                 />
                 <p className="text-xs text-muted-foreground/80">
-                  A git-mcp.yijia-su.workers.dev server, a github.com
-                  repository, or a github.io pages site
+                  A git-mcp.cronoslabs.dev server, a github.com repository, or a
+                  github.io pages site
                 </p>
               </div>
             </div>

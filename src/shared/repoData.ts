@@ -14,7 +14,7 @@ export type RequestData = {
 };
 export type LogData = RepoData & RequestData;
 
-export const WORKER_HOST = "git-mcp.yijia-su.workers.dev";
+export const WORKER_HOST = "git-mcp.cronoslabs.dev";
 
 export function getRepoData(requestData: RequestData): RepoData {
   const { requestHost, requestUrl } = requestData;

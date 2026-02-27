@@ -14,10 +14,7 @@ export default function App() {
           content="Instantly create an MCP server for any GitHub project"
         />
 
-        <meta
-          property="og:url"
-          content="https://git-mcp.yijia-su.workers.dev/"
-        />
+        <meta property="og:url" content="https://git-mcp.cronoslabs.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="GitMCP" />
         <meta
@@ -26,17 +23,14 @@ export default function App() {
         />
         <meta
           property="og:image"
-          content="https://git-mcp.yijia-su.workers.dev/img/OG.png"
+          content="https://git-mcp.cronoslabs.dev/img/OG.png"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:domain"
-          content="git-mcp.yijia-su.workers.dev"
-        />
+        <meta property="twitter:domain" content="git-mcp.cronoslabs.dev" />
         <meta
           property="twitter:url"
-          content="https://git-mcp.yijia-su.workers.dev/"
+          content="https://git-mcp.cronoslabs.dev/"
         />
         <meta name="twitter:title" content="GitMCP" />
         <meta
@@ -45,7 +39,7 @@ export default function App() {
         />
         <meta
           name="twitter:image"
-          content="https://git-mcp.yijia-su.workers.dev/img/OG.png"
+          content="https://git-mcp.cronoslabs.dev/img/OG.png"
         />
         {/* All `meta` exports on all routes will render here */}
         <Meta />
